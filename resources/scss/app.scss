@@ -1,1 +1,169 @@
-@import '~bootstrap/scss/bootstrap'
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+@import '~bootstrap/scss/bootstrap';
+
+#header {
+    header {
+        @include d-flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+        position: relative;
+
+        // align-items: center;
+        div {
+            padding: 0.3rem;
+            // width: 50px;
+            height: 100%;
+
+            img {
+                max-height: 100%;
+                display: inline-block;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        height: 100%;
+        // background-color: aqua;
+        @include d-flex;
+        @media screen and (max-width: 950px) {
+            flex-direction: column;
+            position: absolute;
+            width: 100%;
+            background-color: white;
+            top: 80px;
+            height: auto;
+            z-index: 10;
+        }
+
+        li {
+            @include d-flex;
+            padding: 0 1rem;
+        }
+
+        li a {
+            @include d-flex;
+            font-weight: 700;
+            align-items: center;
+            border-bottom: 5px solid transparent;
+            text-decoration: none;
+            color: $black-bg-main;
+            cursor: pointer;
+            // padding: 0 1rem;
+            // transition: all 0.4s;
+            @media screen and (max-width: 950px) {
+                padding: 0.8rem 0;
+                width: 100%;
+            }
+
+            &.active,
+            &:hover {
+                color: $blue;
+                border-bottom-color: $blue;
+            }
+        }
+    }
+    span {
+        display: inline-block;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+    // span:after {
+    //   content: "\f0c9";
+    //   font-weight: 600;
+    //   font-size: 1rem;
+    //   font-family: "Font Awesome 6 Free";
+    // }
+
+    //   .slide-fade-enter-active {
+    //     transition: all 0.2s ease-out;
+    //   }
+
+    //   .slide-fade-leave-active {
+    //     transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+    //   }
+
+    //   .slide-fade-enter-from,
+    //   .slide-fade-leave-to {
+    //     transform: translateY(-20px);
+    //     opacity: 0;
+    //   }
+}
+#jumbotron {
+    background-image: url("../img/jumbotron.jpg");
+    height: 300px;
+    background-size: cover;
+    background-position: top;
+}
+#footer {
+    .wrapper {
+        background-color: $almost-dark;
+        background-image: url("../img/footer-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    div.container {
+        position: relative;
+        @include d-flex;
+        padding: 1rem 1rem;
+
+        // background: transparent;s
+        ul {
+            margin: 0;
+            list-style: none;
+            padding: 0 2rem 1rem 0;
+            color: $grey;
+
+            h4 {
+                text-transform: uppercase;
+                color: $white;
+                font-size: 1.2rem;
+                padding: 1rem 0;
+            }
+
+            // li:first-child a {
+            //   display: inline-block;
+            //   text-transform: uppercase;
+            //   color: $white;
+            //   font-size: 1.2rem;
+            //   padding: 1rem 0;
+            // }
+
+            ul {
+                padding: 0;
+            }
+
+            li a {
+                text-decoration: none;
+                padding: 5px 0;
+                color: $grey;
+                display: inline-block;
+                padding: 0.2rem 0;
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .logo {
+        background-image: url("../img/dc-logo-bg.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+        // background-color: transparent;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 560px;
+        height: 130%;
+    }
+}
+
