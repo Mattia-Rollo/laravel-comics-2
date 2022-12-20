@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container ">
-    <h1>{{$comic->title}}</h1>
+    <h1 class="text-center">{{$comic->title}}</h1>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -14,6 +14,9 @@
                       <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
+            </div>
+            <div class="col">
+                {{$comic->description}}
             </div>
         </div>
     </div>
