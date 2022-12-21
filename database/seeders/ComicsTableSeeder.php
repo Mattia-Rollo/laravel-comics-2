@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Comic;
 
 class ComicsTableSeeder extends Seeder
 {
@@ -15,9 +15,8 @@ class ComicsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         $comics = config('comics.comics');
-        // dd($comics);
+        //dd($comics);
         foreach ($comics as $comic) {
             $newComic = new Comic();
             $newComic->title = $comic['title'];
@@ -27,8 +26,6 @@ class ComicsTableSeeder extends Seeder
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
-            // $newComic->artists->toJson() = $comic['artists'];
-            // $newComic->writers->toJson() = $comic['writers'];
             $newComic->save();
         }
     }

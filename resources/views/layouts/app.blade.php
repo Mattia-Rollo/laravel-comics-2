@@ -5,10 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Comics</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>@yield('page-title', 'Laravel Comics')</title>
 
     <!-- Styles -->
     @vite('resources/js/app.js')
@@ -16,11 +13,12 @@
 </head>
 
 <body>
-    @include('partials.header')
+@include('partials.header')
     <main>
         @yield('content')
     </main>
-    @include('partials.footer')
+@include('partials.footer')
+@include('partials.footer2')
 </body>
 
 </html>
